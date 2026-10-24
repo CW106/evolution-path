@@ -1,5 +1,6 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>演化之路</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A6%95%3C%2Ftext%3E%3C%2Fsvg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="從 13 個時代、121 種真實的古生物裡選一個出發，和同時出發的物種一起演化：挑選突變、面對天敵與轉折點、撐過大滅絕，演化出上萬種標示為「虛構」的新物種，甚至在未來統治地球。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -760,6 +761,14 @@ details.why .factors { margin-top: 6px; }
 .sw:checked { background: var(--amber); }
 .sw:checked::after { transform: translateX(20px); }
 .sw:focus-visible { outline: 2.5px solid var(--focus); outline-offset: 2px; }
+.thm-seg { display: inline-flex; flex: none; border: 1.5px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--paper); }
+.thm-seg label { position: relative; padding: 5px 12px; font-size: 13.5px; font-weight: 600; color: var(--muted); cursor: pointer; border-left: 1px solid var(--line); }
+.thm-seg label:first-child { border-left: 0; }
+.thm-seg input { position: absolute; opacity: 0; pointer-events: none; }
+.thm-seg label:has(input:checked) { background: var(--amber-soft); color: var(--warn); }
+.thm-seg label:has(input:focus-visible) { outline: 2.5px solid var(--focus); outline-offset: -3px; }
+.icon-btn.thm { min-height: 30px; min-width: 32px; padding: 2px 7px; display: inline-flex; align-items: center; justify-content: center; }
+.icon-btn.thm svg { flex: none; }
 
 /* ---------- 選生物：方格 ---------- */
 .pick-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 2px 2px 10px; }
@@ -4816,7 +4825,7 @@ details.why .factors { margin-top: 6px; }
   var toastEl = document.getElementById('toast');
 
   var KEY_MUSEUM = 'evo-museum-v1', KEY_MODE = 'evo-mode-v1', KEY_SPEED = 'evo-speed-v1', KEY_SOUND = 'evo-sound-v1', KEY_ACH = 'evo-ach-v1', KEY_DEX = 'evo-dex-v1';
-  var KEY_FICTION = 'evo-fiction-v1', KEY_SPECIES = 'evo-species-v1';
+  var KEY_FICTION = 'evo-fiction-v1', KEY_SPECIES = 'evo-species-v1', KEY_THEME = 'evo-theme-v1';
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* 瀏覽器不允許儲存時就略過 */ } }
 
@@ -4839,7 +4848,8 @@ details.why .factors { margin-top: 6px; }
     museumTab: 'fossil', runAch: [], lastFocus: null, justDied: null,
     sound: !!load(KEY_SOUND, false), endPlayed: false, endSkipNow: false,
     fiction: load(KEY_FICTION, true) !== false,   // 要不要出現遊戲虛構的新物種
-    spTab: 'real', ficCls: '', ficPage: 0
+    spTab: 'real', ficCls: '', ficPage: 0,
+    theme: ['light', 'dark'].indexOf(load(KEY_THEME, 'auto')) !== -1 ? load(KEY_THEME, 'auto') : 'auto'   // 外觀：auto 跟著系統
   };
   var timers = [];
   function clearTimers() { timers.forEach(clearTimeout); timers = []; }
@@ -4853,6 +4863,8 @@ details.why .factors { margin-top: 6px; }
   var ICON_PAUSE = '<svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><rect x="3" y="2" width="3.6" height="12" rx="1" fill="currentColor"/><rect x="9.4" y="2" width="3.6" height="12" rx="1" fill="currentColor"/></svg>';
   var ICON_PLAY = '<svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M4 2.5v11l9.5-5.5z" fill="currentColor"/></svg>';
   var ICON_SND_ON = '<svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path d="M3 8h3l4-3.5v11L6 12H3z" fill="currentColor"/><path d="M13 7.2c1.1 1.5 1.1 4.1 0 5.6M15.4 5c2.2 2.8 2.2 7.2 0 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+  var ICON_SUN = '<svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><path d="M10 1.8v2.4M10 15.8v2.4M1.8 10h2.4M15.8 10h2.4M4.2 4.2l1.7 1.7M14.1 14.1l1.7 1.7M4.2 15.8l1.7-1.7M14.1 5.9l1.7-1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+  var ICON_MOON = '<svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path d="M15.6 12.6A6.6 6.6 0 0 1 7.4 4.4a6.6 6.6 0 1 0 8.2 8.2z" fill="currentColor"/></svg>';
   var ICON_SND_OFF = '<svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path d="M3 8h3l4-3.5v11L6 12H3z" fill="currentColor"/><path d="M13 7.5l4.5 5M17.5 7.5l-4.5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
   var FOCUS_ICON = {
     forage: '<svg viewBox="0 0 20 20" width="20" height="20"><path d="M4 16C4 8.5 8.5 4 16 4c0 7.5-4.5 12-12 12z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4 16l7-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
@@ -4909,6 +4921,25 @@ details.why .factors { margin-top: 6px; }
     return s;
   }
   function speciesOf(st) { return (st && st.species) || (st ? E.realSpecies(st.sp.base) : null); }
+
+  /* ---------- 外觀（淺色／深色） ---------- */
+  var DARK_MQ = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function isDark() { return S.theme === 'dark' || (S.theme !== 'light' && !!(DARK_MQ && DARK_MQ.matches)); }
+  function applyTheme() {
+    if (S.theme === 'light' || S.theme === 'dark') document.documentElement.setAttribute('data-theme', S.theme);
+    else document.documentElement.removeAttribute('data-theme');
+  }
+  function themeBtn() {
+    var d = isDark();
+    return '<button class="icon-btn thm" data-act="theme" aria-label="' + (d ? '切換成淺色' : '切換成深色') + '" title="' + (d ? '切換成淺色' : '切換成深色') + '">' + (d ? ICON_SUN : ICON_MOON) + '</button>';
+  }
+  function setTheme(t) {
+    S.theme = t === 'light' || t === 'dark' ? t : 'auto';
+    save(KEY_THEME, S.theme); applyTheme();
+    Array.prototype.forEach.call(document.querySelectorAll('[data-act="theme"]'), function (b) { b.outerHTML = themeBtn(); });
+  }
+  applyTheme();
+  if (DARK_MQ && DARK_MQ.addEventListener) DARK_MQ.addEventListener('change', function () { if (S.theme === 'auto') setTheme('auto'); });
 
   /* ---------- 聲音 ---------- */
   function sfx(n) { if (S.sound) SND.sfx(n); }
@@ -5152,6 +5183,10 @@ details.why .factors { margin-top: 6px; }
       '<input type="checkbox" class="sw" id="opt-fiction" role="switch"' + (S.fiction ? ' checked' : '') + '></label>' +
       (SND.supported ? '<label class="sw-row" for="opt-sound"><span class="sw-txt"><b>音樂與音效</b><small>由瀏覽器即時合成。遊戲中也可以從右上角切換。</small></span>' +
         '<input type="checkbox" class="sw" id="opt-sound" role="switch"' + (S.sound ? ' checked' : '') + '></label>' : '') +
+      '<div class="sw-row"><span class="sw-txt"><b id="thm-h">外觀</b><small>' + (S.theme === 'auto' ? '跟著裝置的設定自動切換淺色、深色。' : S.theme === 'dark' ? '固定使用深色。' : '固定使用淺色。') + '遊戲中也可以從右上角切換。</small></span>' +
+      '<span class="thm-seg" role="radiogroup" aria-labelledby="thm-h">' + [['auto', '自動'], ['light', '淺色'], ['dark', '深色']].map(function (o) {
+        return '<label><input type="radio" name="theme" value="' + o[0] + '"' + (S.theme === o[0] ? ' checked' : '') + '>' + o[1] + '</label>';
+      }).join('') + '</span></div>' +
       '</section>';
   }
   function renderHome() {
@@ -5312,7 +5347,7 @@ details.why .factors { margin-top: 6px; }
     var t = S.anim ? clockAt(S.anim, Math.min(1, S.anim.elapsed / BASE_MS)) : E.stageTime(v.pi, v.stage);
     topbar.hidden = false;
     topbar.innerHTML = '<div class="topbar-in wide"><div class="strata" aria-hidden="true">' + segs + '</div>' +
-      '<div class="topline"><span class="where"><b>' + p.name + '</b>・' + E.stageName(p, v.stage) + '</span><span class="tl-right"><span class="num turnno">' + v.turn + ' / ' + total + '</span>' + soundBtn('icon-btn') + '</span></div>' +
+      '<div class="topline"><span class="where"><b>' + p.name + '</b>・' + E.stageName(p, v.stage) + '</span><span class="tl-right"><span class="num turnno">' + v.turn + ' / ' + total + '</span>' + themeBtn() + soundBtn('icon-btn') + '</span></div>' +
       '<div class="clockline"><span class="clock num" id="clock">' + E.fmtAgo(t) + '</span>' + (LIVE[S.phase] || '') + '</div>' +
       '<button class="ticker" id="ticker" data-act="tolog" aria-label="最新的日誌，點一下查看完整日誌">' + esc(S.lastTick || '演化日誌會在這裡即時更新') + '</button></div>';
   }
@@ -6322,6 +6357,7 @@ details.why .factors { margin-top: 6px; }
     else if (act === 'slower') setSpeed(-1);
     else if (act === 'faster') setSpeed(1);
     else if (act === 'sound') toggleSound();
+    else if (act === 'theme') { setTheme(isDark() ? 'light' : 'dark'); sfx('click'); }
     else if (act === 'toend') { clearTimers(); show('end'); }
     else if (act === 'skipanim') skipEnding();
     else if (act === 'tolog') { var fd = document.getElementById('feed'); if (fd) { fd.scrollTop = 0; fd.closest('.feed').scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
@@ -6347,6 +6383,11 @@ details.why .factors { margin-top: 6px; }
       var y2 = window.scrollY; renderHome(); window.scrollTo(0, y2);
       var f2 = document.getElementById('opt-fiction'); if (f2) f2.focus();
       toast(S.fiction ? '已開啟虛構物種：新物種的名字旁會標上「虛構」。' : '已關閉虛構物種：之後的遊戲只會出現真實的生物名稱。');
+      sfx('click');
+    } else if (t.name === 'theme') {
+      setTheme(t.value);
+      var y3 = window.scrollY; renderHome(); window.scrollTo(0, y3);
+      var f3 = document.querySelector('input[name="theme"][value="' + S.theme + '"]'); if (f3) f3.focus();
       sfx('click');
     } else if (t.id === 'opt-sound') {
       if (t.checked !== S.sound) toggleSound();
