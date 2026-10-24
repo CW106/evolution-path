@@ -1086,7 +1086,7 @@ details.why .factors { margin-top: 6px; }
       t: { size: 2, armor: 1, speed: 7, heat: 5, cold: 3, smart: 4, fert: 5 }, flags: ['spine', 'jaws', 'lungs', 'limbs', 'amnion', 'biped', 'airsac', 'feathers', 'endo', 'dino'], hue: 36, look: 'raptor',
       blurb: '聰明敏捷的小型獵食恐龍，後腳有一根大鉤爪。',
       fact: '真正的迅猛龍（正式中文名為伶盜龍）大約只有火雞大小，身上還有羽毛，和電影裡很不一樣。' },
-    triceratops: { name: '三角龍', sci: 'Triceratops', diff: 5, fdiff: 5, tip: '離小行星撞擊只剩三個回合！大型草食動物最怕植物停止生長。', plan: 'chordate', habitat: 'land', diet: 'herb', lineage: 'sau',
+    triceratops: { name: '三角龍', sci: 'Triceratops', diff: 5, fdiff: 5, tip: '你一出發，小行星就要撞上地球了！大型草食動物最怕植物停止生長。', plan: 'chordate', habitat: 'land', diet: 'herb', lineage: 'sau',
       t: { size: 8, armor: 7, speed: 3, heat: 6, cold: 3, smart: 2, fert: 4 }, flags: ['spine', 'jaws', 'lungs', 'limbs', 'amnion', 'spikes', 'dino'], hue: 84, look: 'ceratopsian',
       blurb: '頭上有三根角和大頸盾的草食恐龍，敢和暴龍正面對抗。',
       fact: '三角龍一直活到白堊紀的最後，是最後一批非鳥恐龍之一。' },
@@ -1256,7 +1256,7 @@ details.why .factors { margin-top: 6px; }
     guiyu: { name: '夢幻鬼魚', sci: 'Guiyu oneiros', plan: 'chordate', habitat: 'sea', diet: 'carn',
       t: { size: 2, armor: 3, speed: 4, heat: 4, cold: 3, smart: 2, fert: 5 }, flags: ['spine', 'gills', 'jaws', 'eyes', 'spikes'], hue: 120, look: 'lobefin',
       blurb: '大約 30 公分長的硬骨魚，身上混合了好幾種魚類的特徵，背上有尖銳的棘刺。',
-      fact: '夢幻鬼魚在 2009 年發表，出土於雲南曲靖，距今約 4.19 億年，是目前已知最古老、保存完整的硬骨魚之一。',
+      fact: '夢幻鬼魚在 2009 年發表，出土於雲南曲靖，距今約 4.25 億年，是目前已知最古老、保存完整的硬骨魚之一。',
       tip: '你是肉鰭魚的親戚，長出肺就能為登陸做準備。' },
     galeaspid: { name: '盔甲魚', sci: 'Galeaspida', plan: 'chordate', habitat: 'sea', diet: 'detri',
       t: { size: 2, armor: 6, speed: 2, heat: 5, cold: 3, smart: 1, fert: 5 }, flags: ['spine', 'gills', 'eyes'], hue: 48, look: 'fish',
@@ -1756,30 +1756,36 @@ details.why .factors { margin-top: 6px; }
   var DIFF = {
     photobac: [3, 3], thermoarch: [3, 3], protobac: [3, 3], methanogen: [3, 3], greensulfur: [3, 3], trilobite: [3, 3], anomalocaris: [4, 4],
     pikaia: [3, 3], opabinia: [3, 3], hallucigenia: [2, 2], wiwaxia: [2, 2], marrella: [1, 2], haikouichthys: [3, 3], myllokunmingia: [3, 3],
-    cameroceras: [5, 5], orthoceras: [3, 3], astraspis: [3, 3], arandaspis: [4, 4], conodont: [4, 4], pterygotus: [5, 5], eurypterid: [5, 5],
-    entelognathus: [2, 2], guiyu: [3, 3], galeaspid: [3, 3], dunkleosteus: [5, 5], tiktaalik: [4, 4], ammonite: [4, 4], cladoselache: [4, 4],
+    cameroceras: [5, 5], orthoceras: [3, 3], astraspis: [4, 4], arandaspis: [4, 4], conodont: [4, 4], pterygotus: [5, 5], eurypterid: [5, 5],
+    entelognathus: [2, 2], guiyu: [3, 3], galeaspid: [3, 3], dunkleosteus: [5, 5], tiktaalik: [4, 4], ammonite: [4, 4], cladoselache: [5, 5],
     ichthyostega: [4, 4], acanthostega: [4, 4], eusthenopteron: [5, 5], coelacanth: [5, 5], dipterus: [4, 4], bothriolepis: [4, 4],
-    meganeura: [4, 4], hylonomus: [3, 3], arthropleura: [5, 5], roach: [3, 3], proterogyrinus: [5, 5], pulmonoscorpius: [2, 3],
-    crassigyrinus: [5, 5], archaeothyris: [2, 2], stethacanthus: [3, 3], dimetrodon: [5, 5], lystrosaurus: [2, 2], mesosaurus: [3, 3],
-    gorgonopsid: [5, 5], eryops: [5, 5], helicoprion: [5, 5], cotylorhynchus: [5, 5], scutosaurus: [5, 5], estemmenosuchus: [5, 5], eoraptor: [2, 2],
+    meganeura: [4, 4], hylonomus: [4, 4], arthropleura: [5, 5], roach: [3, 3], proterogyrinus: [5, 5], pulmonoscorpius: [2, 3],
+    crassigyrinus: [5, 5], archaeothyris: [4, 4], stethacanthus: [3, 3], dimetrodon: [5, 5], lystrosaurus: [3, 3], mesosaurus: [3, 3],
+    gorgonopsid: [5, 5], eryops: [5, 5], helicoprion: [5, 5], cotylorhynchus: [5, 5], scutosaurus: [5, 5], estemmenosuchus: [5, 5], eoraptor: [3, 3],
     coelophysis: [1, 2], plateosaurus: [5, 5], eudimorphodon: [2, 2], shonisaurus: [5, 5], keichousaurus: [1, 2], tanystropheus: [5, 5],
-    cynognathus: [5, 5], postosuchus: [5, 5], allosaurus: [2, 3], diplodocus: [5, 5], morganucodon: [1, 3], stegosaurus: [3, 3],
+    cynognathus: [5, 5], postosuchus: [5, 5], allosaurus: [3, 3], diplodocus: [5, 5], morganucodon: [1, 3], stegosaurus: [4, 4],
     brachiosaurus: [5, 5], dilophosaurus: [2, 2], anchiornis: [1, 2], mamenchisaurus: [5, 5], archaeopteryx: [1, 2], plesiosaur: [2, 2],
-    ichthyosaurus: [1, 2], rhamphorhynchus: [1, 2], guanlong: [1, 2], velociraptor: [1, 2], triceratops: [5, 5], mosasaurus: [3, 4], trex: [5, 5],
+    ichthyosaurus: [1, 2], rhamphorhynchus: [1, 2], guanlong: [2, 2], velociraptor: [2, 2], triceratops: [5, 5], mosasaurus: [5, 5], trex: [5, 5],
     spinosaurus: [5, 5], ankylosaurus: [5, 5], parasaurolophus: [5, 5], sinosauropteryx: [1, 2], microraptor: [1, 2], argentinosaurus: [5, 5],
-    deinonychus: [1, 2], quetzalcoatlus: [4, 5], pteranodon: [3, 4], elasmosaurus: [3, 5], psittacosaurus: [2, 2], sarcosuchus: [5, 5],
+    deinonychus: [1, 2], quetzalcoatlus: [5, 5], pteranodon: [5, 5], elasmosaurus: [5, 5], psittacosaurus: [2, 2], sarcosuchus: [5, 5],
     eohippus: [1, 2], pakicetus: [1, 2], plesiadapis: [1, 2], gastornis: [1, 3], icaronycteris: [1, 2], titanoboa: [3, 4], basilosaurus: [1, 2],
-    andrewsarchus: [1, 3], paraceratherium: [4, 5], entelodon: [1, 3], darwinius: [1, 2], brontotherium: [3, 4], megalodon: [1, 3],
+    andrewsarchus: [1, 3], paraceratherium: [4, 5], entelodon: [1, 3], darwinius: [1, 2], brontotherium: [3, 5], megalodon: [1, 3],
     deinotherium: [2, 5], platybelodon: [2, 4], australopithecus: [1, 2], hipparion: [1, 3], phorusrhacos: [1, 3], livyatan: [1, 2], mammoth: [1, 5],
-    smilodon: [1, 4], habilis: [1, 2], megatherium: [1, 5], direwolf: [1, 4], coelodonta: [1, 5], cavebear: [1, 5], megaloceros: [1, 3], moa: [2, 5],
+    smilodon: [1, 4], habilis: [1, 2], megatherium: [1, 5], direwolf: [1, 4], coelodonta: [1, 5], cavebear: [1, 5], megaloceros: [1, 4], moa: [2, 5],
     glyptodon: [1, 5], neanderthal: [1, 2], aepyornis: [3, 5]
   };
   Object.keys(DIFF).forEach(function (k) { if (CREATURES[k]) { CREATURES[k].diff = DIFF[k][0]; CREATURES[k].fdiff = DIFF[k][1]; } });
 
-  // 同時出發的物種：從同一個年代的其他生物裡隨機挑 4 種
+  // 同時出發的物種：同一個年代裡，出發時已經出現、而且還沒滅絕的其他生物
+  function rivalPool(eraPid, cid) {
+    var era = START_ERAS.filter(function (e) { return e.pid === eraPid; })[0], s0 = startPos(eraPid, cid);
+    return era ? era.creatures.filter(function (x) {
+      return x !== cid && startPos(eraPid, x).stage <= s0.stage && !(REAL_END[x] > 0 && REAL_END[x] >= s0.time);
+    }) : [];
+  }
+  // 從裡面隨機挑最多 4 種
   function rivalIds(eraPid, cid, seed) {
-    var era = START_ERAS.filter(function (e) { return e.pid === eraPid; })[0];
-    var pool = era ? era.creatures.filter(function (x) { return x !== cid; }) : [];
+    var pool = rivalPool(eraPid, cid);
     var rnd = makeRng(((seed || 1) ^ 0x5BD1E995) >>> 0);
     for (var i = pool.length - 1; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)), t = pool[i]; pool[i] = pool[j]; pool[j] = t; }
     return pool.slice(0, 4);
@@ -1804,6 +1810,30 @@ details.why .factors { margin-top: 6px; }
     australopithecus: 2, hipparion: 1, phorusrhacos: 13, livyatan: 8.9, coelodonta: 0.014, cavebear: 0.024, megaloceros: 0.0077,
     moa: 0.0006, glyptodon: 0.011, neanderthal: 0.04, aepyornis: 0.001
   };
+  // 真實世界裡，這種生物最早的化石大約出現在什麼時候（百萬年前）；沒列出的（細菌、恐鳥、象鳥）從年代的開頭出發
+  var REAL_START = {
+    trilobite: 521, anomalocaris: 518, pikaia: 508, opabinia: 508, hallucigenia: 518, wiwaxia: 510, marrella: 508, haikouichthys: 518,
+    myllokunmingia: 518, cameroceras: 470, orthoceras: 470, astraspis: 455, arandaspis: 480, conodont: 500, pterygotus: 428, eurypterid: 467,
+    entelognathus: 423, guiyu: 425, galeaspid: 436, dunkleosteus: 382, tiktaalik: 375, ammonite: 409, cladoselache: 370, ichthyostega: 365,
+    acanthostega: 365, eusthenopteron: 385, coelacanth: 410, dipterus: 390, bothriolepis: 387, meganeura: 300, hylonomus: 312, arthropleura: 345,
+    roach: 320, proterogyrinus: 330, pulmonoscorpius: 333, crassigyrinus: 335, archaeothyris: 306, stethacanthus: 370, dimetrodon: 295,
+    lystrosaurus: 255, mesosaurus: 295, gorgonopsid: 265, eryops: 300, helicoprion: 290, cotylorhynchus: 279, scutosaurus: 259, estemmenosuchus: 267,
+    eoraptor: 231, coelophysis: 216, plateosaurus: 214, eudimorphodon: 210, shonisaurus: 227, keichousaurus: 240, tanystropheus: 247, cynognathus: 247,
+    postosuchus: 228, allosaurus: 155, diplodocus: 154, morganucodon: 205, stegosaurus: 155, brachiosaurus: 154, dilophosaurus: 193, anchiornis: 160,
+    mamenchisaurus: 160, archaeopteryx: 151, plesiosaur: 199, ichthyosaurus: 201, rhamphorhynchus: 151, guanlong: 160, velociraptor: 75, triceratops: 68,
+    mosasaurus: 82, trex: 68, spinosaurus: 99, ankylosaurus: 68, parasaurolophus: 77, sinosauropteryx: 125, microraptor: 120, argentinosaurus: 96,
+    deinonychus: 115, quetzalcoatlus: 68, pteranodon: 86, elasmosaurus: 80.5, psittacosaurus: 125, sarcosuchus: 130, eohippus: 55, pakicetus: 50,
+    plesiadapis: 60, gastornis: 57, icaronycteris: 52, titanoboa: 60, basilosaurus: 41, andrewsarchus: 45, paraceratherium: 33, entelodon: 37,
+    darwinius: 47, brontotherium: 38, megalodon: 23, deinotherium: 10, platybelodon: 15, australopithecus: 4.2, hipparion: 15, phorusrhacos: 17,
+    livyatan: 9.9, mammoth: 5, smilodon: 2.5, habilis: 2.3, megatherium: 5, direwolf: 0.25, coelodonta: 3.7, cavebear: 0.3, megaloceros: 0.4,
+    glyptodon: 2.5, neanderthal: 0.4
+  };
+  // 從哪一段時間出發：真實的化石最早出現在哪一段，就從那一段的開頭出發（比這個年代更早就出現的，從年代的開頭出發）
+  function startPos(pid, cid) {
+    var pi = PERIOD_INDEX[pid], p = PERIODS[pi], ma = REAL_START[cid], s = 0;
+    if (ma != null) while (s + 1 < p.stages && stageTime(pi, s + 1) >= ma) s++;
+    return { pi: pi, stage: s, time: stageTime(pi, s) };
+  }
 
   // 這些生物本身消失了，但牠們的後代一直演化到今天
   var LINE_LIVES = ['pikaia', 'tiktaalik', 'hylonomus', 'morganucodon', 'velociraptor', 'eohippus', 'pakicetus', 'plesiadapis', 'habilis',
@@ -3498,22 +3528,22 @@ details.why .factors { margin-top: 6px; }
       base: creatureId, name: cr.name, plan: cr.plan, habitat: cr.habitat, diet: cr.diet, lineage: cr.lineage || null,
       t: JSON.parse(JSON.stringify(cr.t)), flags: cr.flags.slice(), hue: cr.hue, look: cr.look
     };
-    var pi = PERIOD_INDEX[eraPid];
+    var pi = PERIOD_INDEX[eraPid], s0 = opts.stage != null ? opts.stage : startPos(eraPid, creatureId).stage;
     var st = {
-      v: 4, seed: seed >>> 0, rngState: seed >>> 0, sp: sp, pop: 60, div: 50, pi: pi, stage: 0, turn: 1,
+      v: 4, seed: seed >>> 0, rngState: seed >>> 0, sp: sp, pop: 60, div: 50, pi: pi, stage: s0, turn: 1,
       mode: opts.mode === 'future' ? 'future' : 'classic', nick: (opts.nick || '').trim() || cr.name,
-      startPi: pi, startTime: stageTime(pi, 0), mutations: 0, log: [], alive: true, won: false, ending: null,
+      startPi: pi, startStage: s0, startTime: stageTime(pi, s0), mutations: 0, log: [], alive: true, won: false, ending: null,
       sciName: cr.sci, sciParts: null, options: null, survivedMass: [], peakPop: 60, minPop: 60, dom: null, mutBoost: 0,
       focus: 'breed', effects: [], niche: [], tpLast: 0, tpHist: {}, tpCur: null, pend: null, escapes: 0, tags: {}, habs: [sp.habitat],
       fiction: opts.fiction !== false, species: realSpecies(creatureId), speciesBase: null, speciesN: 0
     };
     st.speciesBase = speciesKey(sp);
-    st.forms = [{ turn: 0, time: fmtAgo(st.startTime), cls: classify(sp), sp: clone(sp), pid: PERIODS[pi].id, stage: 0 }];
+    st.forms = [{ turn: 0, time: fmtAgo(st.startTime), cls: classify(sp), sp: clone(sp), pid: PERIODS[pi].id, stage: s0 }];
     st.options = drawOptions(st);
     if (opts.noRivals) st.npc = true;
     else {
       st.rivals = rivalIds(eraPid, creatureId, seed).map(function (cid, i) {
-        return newGame(eraPid, cid, (seed ^ Math.imul(i + 1, 0x9E3779B1)) >>> 0, { mode: st.mode, noRivals: true, fiction: st.fiction });
+        return newGame(eraPid, cid, (seed ^ Math.imul(i + 1, 0x9E3779B1)) >>> 0, { mode: st.mode, noRivals: true, fiction: st.fiction, stage: s0 });
       });
     }
     return st;
@@ -3839,8 +3869,8 @@ details.why .factors { margin-top: 6px; }
 
   function survivedMa(st) { return st.startTime - (st.alive && !st.won ? stageTime(st.pi, st.stage) : st.endTime); }
   function lastIndex(mode) { return mode === 'future' ? PERIODS.length - 1 : QUAT; }
-  function totalTurns(pid, mode) {
-    var n = 0; for (var i = PERIOD_INDEX[pid]; i <= lastIndex(mode); i++) n += PERIODS[i].stages; return n;
+  function totalTurns(pid, mode, s0) {
+    var n = -(s0 || 0); for (var i = PERIOD_INDEX[pid]; i <= lastIndex(mode); i++) n += PERIODS[i].stages; return n;
   }
   function massCount(pid, mode) {
     var n = 0, i0 = PERIOD_INDEX[pid], i1 = lastIndex(mode);
@@ -3895,7 +3925,7 @@ details.why .factors { margin-top: 6px; }
     continueToFuture: continueToFuture, autoPick: autoPick, domParts: domParts, FATES: FATES, SCIFI: SCIFI, QUAT: QUAT,
     beginTurn: beginTurn, resolveTurn: resolveTurn, rollTurning: rollTurning, currentTurning: currentTurning,
     chooseTurning: chooseTurning, autoTurning: autoTurning, autoFocus: autoFocus, focusPreview: focusPreview,
-    finishRivals: finishRivals, relOf: relOf, FOCI: FOCI, FOCUS_IDS: FOCUS_IDS, REAL_END: REAL_END, LINE_LIVES: LINE_LIVES, TPS: TPS,
+    finishRivals: finishRivals, relOf: relOf, FOCI: FOCI, FOCUS_IDS: FOCUS_IDS, REAL_END: REAL_END, REAL_START: REAL_START, startPos: startPos, rivalPool: rivalPool, LINE_LIVES: LINE_LIVES, TPS: TPS,
     speciesKey: speciesKey, speciesFromKey: speciesFromKey, SPECIES_TOTAL: SPECIES_TOTAL, SP_ROOT: SP_ROOT, realSpecies: realSpecies, featsFor: featsFor
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = Evo;
@@ -7231,6 +7261,11 @@ details.why .factors { margin-top: 6px; }
   }
   function signed(v) { v = Math.round(v); return (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v); }
   function periodEnd(p) { return p.bounds ? p.bounds[p.bounds.length - 1] : p.end; }
+  // 年代的時間範圍，例如「約 2.52 億～2.01 億年前」
+  function eraSpan(p) {
+    var a = E.fmtAgo(p.start), b = periodEnd(p);
+    return b <= 0 ? a + '～現代' : a.replace(/年前$/, '') + '～' + E.fmtAgo(b).replace(/^約 /, '');
+  }
   function hasMass(pid) {
     return Object.keys(E.SCHEDULE).some(function (k) { return k.split(':')[0] === pid && E.EVENTS[E.SCHEDULE[k]].kind === 'mass'; });
   }
@@ -7498,13 +7533,14 @@ details.why .factors { margin-top: 6px; }
   /* ---------- 首頁 ---------- */
   function eraRow(e) {
     var p = periodOf(e.pid);
-    var turns = E.totalTurns(e.pid, S.mode), mass = E.massCount(e.pid, S.mode);
+    var ts = e.creatures.map(function (c) { return E.totalTurns(e.pid, S.mode, E.startPos(e.pid, c).stage); });
+    var turns = Math.max.apply(null, ts), fewest = Math.min.apply(null, ts), mass = E.massCount(e.pid, S.mode);
     var best = bestFor(e.pid, S.mode);
     var name = p.name.length > 3 ? p.name.slice(0, 2) + '<br>' + p.name.slice(2) : p.name;
     return '<button class="era" data-act="era" data-pid="' + e.pid + '" style="--band:' + p.color + ';--band-ink:' + inkOn(p.color) + '">' +
       '<span class="era-band">' + name + '</span>' +
-      '<span class="era-main"><span class="era-time">' + E.fmtAgo(p.start) + '</span><span class="era-hook">' + e.hook + '</span>' +
-      '<span class="era-meta">' + turns + ' 段時間・' + mass + ' 次大滅絕' + (best ? '・' + best : '') + '</span></span>' +
+      '<span class="era-main"><span class="era-time">' + eraSpan(p) + '</span><span class="era-hook">' + e.hook + '</span>' +
+      '<span class="era-meta">' + (fewest < turns ? fewest + '～' : '') + turns + ' 段時間・' + mass + ' 次大滅絕' + (best ? '・' + best : '') + '</span></span>' +
       '<span class="era-go" aria-hidden="true">›</span></button>';
   }
   var counterT = 0;
@@ -7568,10 +7604,10 @@ details.why .factors { margin-top: 6px; }
   }
   function paintRoll(pid, cid, final) {
     var box = document.getElementById('roll-box'); if (!box) return;
-    var p = periodOf(pid), c = E.CREATURES[cid];
+    var p = periodOf(pid), c = E.CREATURES[cid], s0 = E.startPos(pid, cid);
     box.className = 'roll-box' + (final ? ' landed' : '');
-    box.innerHTML = '<span class="roll-era" style="background:' + p.color + ';color:' + inkOn(p.color) + '">' + p.name + '・' + E.fmtAgo(p.start) + '</span>' +
-      '<div class="roll-art">' + A.creatureSVG(spOf(cid), { pid: pid, stage: 0, crowd: false }) + '</div>' +
+    box.innerHTML = '<span class="roll-era" style="background:' + p.color + ';color:' + inkOn(p.color) + '">' + startWhere(p, s0.stage) + '・' + E.fmtAgo(s0.time) + '</span>' +
+      '<div class="roll-art">' + A.creatureSVG(spOf(cid), { pid: pid, stage: s0.stage, crowd: false }) + '</div>' +
       '<b class="roll-name">' + c.name + '</b>' + (final ? '<p class="roll-blurb">' + c.blurb + '</p>' : '');
     if (final) { var act = document.getElementById('roll-act'); if (act) act.hidden = false; }
   }
@@ -7594,6 +7630,15 @@ details.why .factors { margin-top: 6px; }
   }
 
   /* ---------- 選生物：小方格＋展開的介紹卡 ---------- */
+  // 出發的地方：有正式名稱的世（古新世、更新世…）才寫出來；三等分的早期／中期／晚期和真實的年代對不上
+  function startWhere(p, stage) { return p.name + (p.stageNames ? '・' + E.stageName(p, stage) : ''); }
+  // 出發的時間：真實的化石最早出現的那一段時間的開頭
+  function startText(cid) {
+    var s0 = E.startPos(S.eraPid, cid), p = E.PERIODS[s0.pi], real = E.REAL_START[cid], n = Math.min(4, E.rivalPool(S.eraPid, cid).length);
+    var t0 = E.fmtAgo(s0.time), tr = real != null && real < s0.time ? E.fmtAgo(real) : '';
+    return '出發時間：' + startWhere(p, s0.stage) + '・' + t0 + (tr && tr !== t0 ? '（最早的化石' + tr + '）' : real != null && real > p.start ? '（這個時代以前就已出現）' : '') +
+      '・' + (n ? '同時出發的物種 ' + n + ' 種' : '沒有同時出發的物種');
+  }
   function realEndText(cid) {
     var real = E.REAL_END[cid], c = E.CREATURES[cid];
     if (real === 0 || real == null) return '這一類生物一直活到了今天。';
@@ -7615,6 +7660,7 @@ details.why .factors { margin-top: 6px; }
       '<span class="diff">' + pips(d) + '難度：' + DIFF[d] + (S.mode === 'future' ? '（未來模式）' : '') + '</span>' +
       '<p class="crit-blurb">' + c.blurb + '</p>' +
       '<p class="crit-facts">' + E.HABITAT_NAME[c.habitat] + '・' + E.DIET_NAME[c.diet] + '・體長' + E.sizeLength(sp) + '・' + E.classify(sp) + '</p>' +
+      '<p class="crit-facts">' + startText(cid) + '</p>' +
       '<p class="crit-tip"><b>生存提示</b>' + c.tip + '</p>' +
       '<p class="cd-fact"><b>真實世界</b>' + c.fact + realEndText(cid) + '</p>' +
       '</div></article>';
@@ -7646,12 +7692,12 @@ details.why .factors { margin-top: 6px; }
     app.innerHTML =
       '<button class="link" data-act="home">← 換個時代</button>' +
       '<div class="era-head" style="--band:' + p.color + '"><span class="bar"></span><div>' +
-      '<p class="eyebrow num">' + E.fmtAgo(p.start) + '・' + (S.mode === 'future' ? '未來模式' : '經典模式') + '</p>' +
+      '<p class="eyebrow num">' + eraSpan(p) + '・' + (S.mode === 'future' ? '未來模式' : '經典模式') + '</p>' +
       '<h2>' + p.name + '</h2><p>' + p.desc + '</p></div></div>' +
       '<div class="pick-head"><h3>選一種生物</h3><span class="muted">' + e.creatures.length + ' 種・橘色格數是難度</span></div>' +
       '<div class="ctiles" id="ctiles" role="radiogroup" aria-label="選擇生物">' + e.creatures.map(critTile).join('') + '</div>' +
       '<p class="muted pick-hint" id="pick-hint">點一種生物，看看牠的介紹。</p>' +
-      '<p class="muted pick-note">這個時代其他的生物裡，會隨機挑 ' + Math.min(4, e.creatures.length - 1) + ' 種和你同時出發、一起演化。</p>' +
+      '<p class="muted pick-note">你會從這種生物最早出現的那段時間出發（這個時代以前就已出現的生物，從時代的開頭出發）；這個時代裡那時已經出現、還沒滅絕的其他生物，會隨機挑最多 4 種和你同時出發、一起演化。</p>' +
       '<div class="name-field"><label for="nick">幫你的物種取個名字</label>' +
       '<input id="nick" maxlength="12" autocomplete="off" placeholder="' + (S.pickCid ? E.CREATURES[S.pickCid].name : '例如：小葉') + '" value="' + esc(S.nick) + '">' +
       '<small class="muted">可以不填，會先用生物原本的名字。</small></div>';
@@ -7687,7 +7733,7 @@ details.why .factors { margin-top: 6px; }
       segs += '<span class="' + cls.join(' ') + '" style="--c:' + p0.color + '" title="' + p0.name + '"></span>';
     }
     var p = E.PERIODS[v.pi];
-    var total = E.totalTurns(E.PERIODS[st.startPi].id, st.mode);
+    var total = E.totalTurns(E.PERIODS[st.startPi].id, st.mode, st.startStage);
     var t = S.anim ? clockAt(S.anim, Math.min(1, S.anim.elapsed / BASE_MS)) : E.stageTime(v.pi, v.stage);
     topbar.hidden = false;
     topbar.innerHTML = '<div class="topbar-in wide"><div class="strata" aria-hidden="true">' + segs + '</div>' +
@@ -8130,8 +8176,8 @@ details.why .factors { margin-top: 6px; }
     var rv = st.rivals || [], alive = rv.filter(function (r) { return r.alive; }).length;
     var real = E.REAL_END[st.sp.base], now = E.stageTime(st.pi, st.stage), realTxt = '';
     if (real === 0 || real == null) realTxt = '真實世界裡，' + cr.name + '這一類生物一直活到了今天。';
-    else if (now < real) realTxt = E.LINE_LIVES.indexOf(st.sp.base) !== -1 ? '真實世界裡的' + cr.name + '在' + E.fmtAgo(real) + '消失了，但牠的近親一路演化到了今天。'
-      : '真實世界裡，' + cr.name + '在' + E.fmtAgo(real) + '就滅絕了。你的' + nick + '已經比真實的牠多活了 ' + E.fmtSpan(real - now) + '。';
+    else if (now <= real) realTxt = E.LINE_LIVES.indexOf(st.sp.base) !== -1 ? '真實世界裡的' + cr.name + '在' + E.fmtAgo(real) + '消失了，但牠的近親一路演化到了今天。'
+      : '真實世界裡，' + cr.name + '在' + E.fmtAgo(real) + '就滅絕了。你的' + nick + (real - now >= 0.01 ? '已經比真實的牠多活了 ' + E.fmtSpan(real - now) + '。' : '撐過了這一關，還活著！');
     else realTxt = '真實世界裡，' + cr.name + '會在' + E.fmtAgo(real) + '消失。你的' + nick + '能撐得更久嗎？';
     return '<div class="sheet-head"><span class="meta">時間暫停・回顧時刻</span><h2 id="sheet-h">' + esc(rf.title) + '</h2></div>' +
       '<div class="compare"><figure class="form"><div class="mini">' + A.creatureSVG(f0.sp, { pid: f0.pid, stage: f0.stage, crowd: false }) + '</div><figcaption><b>出發的時候</b><span>' + f0.time + '・' + f0.cls + '</span></figcaption></figure>' +
@@ -8318,7 +8364,8 @@ details.why .factors { margin-top: 6px; }
       '<li>撐過大滅絕或跨進新的年代時，會有「回顧時刻」，可以比較牠和剛出發時的樣子，留一句話給牠。</li>' +
       '<li>畫面下方可以暫停、放慢或加快時間。開啟「自動選擇」會讓遊戲幫你決定，遇到大滅絕前會停下來讓你親自決定。</li></ol>' +
       '<h3>族群重心</h3><p>隨時可以在「覓食、繁殖、擴張、躲藏」之間切換。平常多繁殖，食物不夠就覓食，大滅絕前躲藏或擴張，常常能救命。選項上的數字是對成長力的影響，「建議」是遊戲算出來的參考。</p>' +
-      '<h3>同時出發的物種</h3><p>同一個時代的其他生物裡，會隨機挑四種和你同時出發、一起演化。牠們可能是你的天敵、獵物或競爭者，也會被真實的歷史追上。最後所有物種會並排比較，看誰撐得最久。</p>' +
+      '<h3>出發的時間</h3><p>每種生物都從牠真實的化石最早出現的那段時間出發，例如板龍會從約 2.18 億年前出發，而不是三疊紀的開頭；這個時代以前就已出現的生物，則從時代的開頭出發。</p>' +
+      '<h3>同時出發的物種</h3><p>同一個時代裡，那時已經出現、還沒滅絕的其他生物，會隨機挑最多四種和你同時出發、一起演化。牠們可能是你的天敵、獵物或競爭者，也會被真實的歷史追上。最後所有物種會並排比較，看誰撐得最久。</p>' +
       '<h3>新物種與「虛構」標示</h3><p>突變累積到身體構造、體型或招牌特徵都和祖先不一樣時，就會成為新的物種。這些新物種是遊戲依照特徵自動命名的（一共可能出現 ' + E.SPECIES_TOTAL.toLocaleString('en-US') + ' 種），現實中並不存在，所以名字旁一律標上' + ficTag(true) + '。不想看到虛構的物種，可以在首頁的「設定」關掉，演化後就只會寫成「某某的後代」。</p>' +
       '<h3>三個數值</h3><ul><li><b>族群</b>：0 就滅絕。小於 30 時很難找到配偶，會越來越少。</li>' +
       '<li><b>遺傳多樣性</b>：越高，每次抉擇能選的突變越多，大滅絕時也更撐得住。每次突變都會讓它下降一點。</li>' +
@@ -8415,7 +8462,7 @@ details.why .factors { margin-top: 6px; }
     var statsHTML = stats.map(function (x, i) { return '<div class="card stat rv" style="--d:' + (3000 + i * 120) + 'ms"><span>' + x[0] + '</span>' + x[1] + '</div>'; }).join('');
 
     var badges = st.survivedMass.map(function (n, i) { return '<span class="badge" style="--d:' + (3900 + i * 140) + 'ms">撐過' + esc(n) + '</span>'; }).join('');
-    var forms = (st.forms && st.forms.length) ? st.forms.slice() : [{ turn: 0, time: E.fmtAgo(st.startTime), cls: E.classify(sp), sp: sp, pid: E.PERIODS[st.startPi].id, stage: 0 }];
+    var forms = (st.forms && st.forms.length) ? st.forms.slice() : [{ turn: 0, time: E.fmtAgo(st.startTime), cls: E.classify(sp), sp: sp, pid: E.PERIODS[st.startPi].id, stage: st.startStage || 0 }];
     var lastF = forms[forms.length - 1];
     // 和最後一張縮圖畫出來不一樣（突變、轉折點改變了體型或特徵），就補上「最後的樣子」，讓它和上面的大圖一致
     if (lookKey(lastF.sp) !== lookKey(sp)) {
@@ -8446,7 +8493,7 @@ details.why .factors { margin-top: 6px; }
       }).join('');
       var aliveN = field.filter(function (f) { return f.ending !== 'extinct'; }).length;
       rankHTML = '<section class="card ranking rv" style="--d:' + tR + 'ms" aria-label="同時出發的物種"><h3>同時出發的 ' + field.length + ' 個物種</h3>' +
-        '<p class="rk-sum">' + nick + '在 ' + field.length + ' 個物種裡排第 <b class="num">' + my + '</b>，' + (aliveN ? '最後還活著的有 ' + aliveN + ' 個。' : '五個物種全部滅絕了。') +
+        '<p class="rk-sum">' + nick + '在 ' + field.length + ' 個物種裡排第 <b class="num">' + my + '</b>，' + (aliveN ? '最後還活著的有 ' + aliveN + ' 個。' : '全部 ' + field.length + ' 個物種都滅絕了。') +
         (ending === 'extinct' && st.rivals ? '<span class="muted">你的物種滅絕之後，其他物種繼續走完了剩下的時間。</span>' : ending === 'rule' ? '<span class="muted">還活著的物種，從此都生活在' + nick + '統治的地球上。</span>' : '') + '</p>' +
         '<ol class="rk-list">' + rows + '</ol></section>';
       t = tR + 300 + field.length * 140 + 200;
